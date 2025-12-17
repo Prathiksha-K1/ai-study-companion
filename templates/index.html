@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>AI Study Companion</title>
+    <style>
+        body {
+            font-family: Arial;
+            background: #0f172a;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .card {
+            background: #020617;
+            padding: 30px;
+            width: 400px;
+            border-radius: 10px;
+            box-shadow: 0 0 12px rgba(0,0,0,0.4);
+        }
+        input, select, button {
+            width: 100%;
+            padding: 10px;
+            margin-top: 10px;
+        }
+        button {
+            background: #38bdf8;
+            border: none;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        .output {
+            margin-top: 15px;
+            background: #020617;
+            padding: 10px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="card">
+    <h2>📚 AI Study Companion</h2>
+
+    <form method="POST">
+        <input type="text" name="topic" placeholder="Enter topic (e.g., Deadlock)" required>
+
+        <select name="level">
+            <option>Beginner</option>
+            <option>Intermediate</option>
+            <option>Advanced</option>
+        </select>
+
+        <select name="style">
+            <option>Analogy</option>
+            <option>Exam-oriented</option>
+        </select>
+
+        <button type="submit">Explain</button>
+    </form>
+
+    {% if explanation %}
+    <div class="output">
+        <strong>Explanation:</strong>
+        <p>{{ explanation }}</p>
+    </div>
+    {% endif %}
+</div>
+
+</body>
+</html>
